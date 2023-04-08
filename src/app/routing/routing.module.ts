@@ -1,12 +1,12 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import {Routes} from "@angular/router";
+import {RouterModule, Routes} from "@angular/router";
 import {HomeComponent} from "../home/home.component";
 import {DataComponent} from "../data/data.component";
 
 
 
-const route: Routes = [
+const routes: Routes = [
   {
     path: '',
     component: HomeComponent
@@ -21,9 +21,8 @@ const route: Routes = [
   }
 ]
 @NgModule({
-  declarations: [],
-  imports: [
-    CommonModule
-  ]
+  // declarations: [],
+  exports:[RouterModule],
+  imports: [RouterModule.forRoot(routes)]
 })
 export class RoutingModule { }
